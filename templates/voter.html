@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="icon" href="{% static 'images/india-symbol-removebg-preview.png' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            <a class="navbar-brand leftimg" href="https://www.mha.gov.in/">
+                <img src="{% static 'images/mhaLogo.png' %}" class="img-fluid">
+            </a>
+          
+            <a class="navbar-brand middleImg" href="https://www.g20.in/en/" style="float: right;padding-left:10px;" target="_blank">
+            <img src="{% static 'images/g20-logo.png' %}" class="img-fluid" style="float: right;">
+            </a>
+               <a class="navbar-brand rghtimg" href="https://amritmahotsav.nic.in/" style="float: right;" target="_blank">
+                <img src="{% static 'images/logoAzadi.png' %}" class="img-fluid">
+            </a>
+
+             <a class="navbar-brand middleImg" href="https://swachhbharat.mygov.in/" style="float: right;" target="_blank">
+            <img src="{% static 'images/swach-bharat.png' %}" class="img-fluid">
+            </a>
+  
+        </div>
+    </div>
+    <div class="col-1 mt-2 float-end"><a  id="logoutbtn" href="/logout">LogOut</a></div>
+
+    <div class="style3 mt-3 bg-dark">
+        <div class="container">    
+            <div>
+                <img class="float-start mb-5" src="{% static 'images/000.png' %}" width="50%" height="250px">
+                <img class="float-end mb-5" src="{% static 'images/qrcode.jpg' %}" width="50%" height="250px">
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <img class="rtologo mx-auto d-block mb-5" src="{% static 'images/voter.png' %}">
+    </div>
+    <div class="filling-id-wrapper">
+        <div class="container">
+            <div class="row">
+			    <div class="col-12">
+                    <h3 class="text-center mt-3">Voter Id Verification Portal</h3>
+                    <div class="container">
+                        India is a Socialist, Secular, Democratic Republic and the largest democracy in the World. The modern Indian nation state came into existence on 15th of August 1947. Since then free and fair elections have been held at regular intervals as per the principles enshrined in the Constitution, Electoral Laws and System.
+
+                        The Constitution of India has vested in the Election Commission of India the superintendence, direction and control of the entire process for conduct of elections to Parliament and Legislature of every State and to the offices of President and Vice-President of India.
+
+                        Election Commission of India is a permanent Constitutional Body. The Election Commission was established in accordance with the Constitution on 25th January 1950. The Commission celebrated its Golden Jubilee in 2001.
+
+                        Originally the commission had only a Chief Election Commissioner. It currently consists of Chief Election Commissioner and two Election Commissioners.
+                        For the first time two additional Commissioners were appointed on 16th October 1989 but they had a very short tenure till 1st January 1990. Later, on 1st October 1993 two additional Election Commissioners were appointed. The concept of multi-member Commission has been in operation since then, with decision making power by majority vote.
+                    </div><br>
+                    <div class="col-3 mx-auto mb-3">
+                        <div class="col-12 mx-auto pl-5 mb-3"><caption>Details Of Applicant</caption></div>
+                        <form method="post" action="voter">
+                            {% csrf_token %}
+                            <div class="col-10"><input class="form-control me-2" type="text" name="aadhar_no" placeholder="Aadhar.no Of Applicant"></div>
+                            <div class="col-6 mx-auto ml-5 mt-3"><input type="submit"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="app_filling-id-wrapper">
+        <div class="container-fluid mt-4">
+            <div class="row">
+                <div class="container-fluid">
+                    <table class="table table-dark table-striped mt-2">
+                        <tr>
+                            <th class="text-center">Name</th>
+                            <th class="text-center">Father's Name</th>
+                            <th class="text-center">Phone Number</th>
+                            <th class="text-center">Gender</th>
+                            <th class="text-center">Email</th>
+                            <th class="text-center">Date of Birth</th>
+                            <th class="text-center">Address</th>
+                            <th class="text-center">Aadhar Number</th>
+                            <th class="text-center">Licence Number</th>
+                            <th class="text-center">Action</th>
+
+                        </tr>
+                    {% for i in app_voter %}
+                        <tr>
+                            <td>{{i.name}}</td>
+                            <td>{{i.father_name}}</td>
+                            <td>{{i.phone_no}}</td>
+                            <td>{{i.Gender}}</td>
+                            <td>{{i.email}}</td>
+                            <td>{{i.dob}}</td>
+                            <td>{{i.address}}</td>
+                            <td>{{i.aadhar_no}}</td>
+                            <td>{{i.license_no}}</td>
+                            {% if i.voter_approval == "False" %}
+                                <td><a class="btn btn-outline-success" href="{% url 'voterapprove' i.id %}">Details</a></td>
+                            {% else %}
+                                <td class="text-success">Approved</td>
+                            {% endif %}
+                        </tr>
+                    {% endfor %}
+                    </table>
+                </div> 
+            </div>
+		</div>
+	</div> 
+
+
+
+    <div class="instruction-wraper">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">			   
+                    <div class="instruction-iner">
+                        <a href="https://validation.mha.gov.in/images/Idcard.PDF" target="_blank" class="btn-details"> Instructions for issue of MHA ID Cards / Validation Slips</a>
+                        <a href="https://validation.mha.gov.in/images/Validationslip_21092021.PDF" target="_blank" class="btn-details"> Instructions for colour code of doris for MHA Identity Card/Validation Slip</a>
+                    </div>
+                </div>
+            </div>
+	    </div>
+    </div>
+
+<div class="footer">
+    <div class="container">
+        <div class="row">
+        <div class="col-12">
+            <ul class="clearfix copyrightLink">
+                <li class="menu-item">
+                <a href="https://mha.gov.in" target="_blank">Home</a>
+                    </li>
+                    <li class="menu-item">
+                <a href="https://mha.gov.in/contactus" target="_blank">Contact Us</a>
+                        </li>
+                <li class="menu-item">
+                <a href="https://mha.gov.in/help" target="_blank">Help</a>
+                    </li>
+            </ul>
+
+                <p>Website Content Managed by Ministry of Home Affairs, GoI</p>
+            <p>For Better Vision :- Please view this site on Internet Explorer 6+ with 1024 x 768 resolution</p>
+                                    <p>Last Updated: 05 March 2023</p>
+        </div>
+</div>
+</div>
+ </div>
+</body>
+</html>
