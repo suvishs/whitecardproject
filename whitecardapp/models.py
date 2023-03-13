@@ -16,6 +16,7 @@ class Application(models.Model):
     license_no = models.IntegerField()
     electionid_no = models.CharField(max_length=15)
     rationcard_no = models.IntegerField()
+    pancard_no = models.IntegerField(null=True)
     Photo = models.ImageField(upload_to="usr_photo")
     rto_approval = models.CharField(max_length=10, default=False)
     ration_approval = models.CharField(max_length=10, default=False)

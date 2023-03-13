@@ -483,3 +483,18 @@ th{
 td{
     text-align: center;
 }
+
+/* form */
+#usrform{
+    background-color: rgb(119, 134, 160);
+    margin: 20px;
+    border-radius: 6%;
+}
+.applform{
+    background-image: url(https://media.istockphoto.com/vectors/india-map-glowing-silhouette-outline-made-of-stars-lines-dots-low-vector-id1167646516?k=20&m=1167646516&s=612x612&w=0&h=W6rlFLDjMRjNCV9GVMfl4TFOwxraG0KZUUs1Gm_uJco=);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+label{
+    color: white;
+}

@@ -15,12 +15,13 @@ class Applicationform(ModelForm):
     license_no = forms.IntegerField()
     electionid_no = forms.CharField(max_length=15)
     rationcard_no = forms.IntegerField()
+    pancard_no = forms.IntegerField()
     Photo = forms.ImageField()
 
     class Meta:
         model = Application
         fields = ['name', 'last_name', 'father_name', 'phone_no', 'Gender', 
-                  'email', 'dob', 'address', 'aadhar_no', 'license_no', 'electionid_no', 'rationcard_no', 'Photo']
+                  'email', 'dob', 'address', 'aadhar_no', 'license_no', 'electionid_no', 'rationcard_no', 'pancard_no', 'Photo']
         widget = {
             'name' : forms.TextInput(attrs={'class':'form-control'}),
             'last_name' : forms.TextInput(attrs={'class':'form-control'}),
@@ -34,5 +35,6 @@ class Applicationform(ModelForm):
             'license_no' : forms.NumberInput(attrs={'class':'form-control'}),
             'electionid_no' : forms.TextInput(attrs={'class':'form-control'}),
             'rationcard_no' : forms.NumberInput(attrs={'class':'form-control'}),
+            'pancard_no' : forms.NumberInput(attrs={'class':'form-control'}),
             'Photo' : forms.FileInput(attrs={'class':'form-control'}),
         }

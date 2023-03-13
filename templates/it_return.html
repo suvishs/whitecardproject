@@ -63,7 +63,7 @@
                         <form method="POST" action="it_return">
                             {% csrf_token %}
                             <input  class="form-control me-2" type="text" name="aadhar_no" placeholder="Aadhar.no Of Applicant">
-                            <div class="col-5 mx-auto ml-5 mt-3"><input type="submit"></div>
+                            <div class="col-5 mx-auto ml-5 mt-3"><button type="submit">submit</button></div>
                         </form>
 
                     </div>
@@ -86,6 +86,7 @@
                             <th class="text-center">Date of Birth</th>
                             <th class="text-center">Address</th>
                             <th class="text-center">Aadhar Number</th>
+                            <th class="text-center">PanCard Number</th>
                             <th class="text-center">Action</th>
 
                         </tr>
@@ -99,6 +100,7 @@
                             <td>{{i.dob}}</td>
                             <td>{{i.address}}</td>
                             <td>{{i.aadhar_no}}</td>
+                            <td>{{i.pancard_no}}</td>
                             {% if i.it_return_approval == "False" %}
                                 <td><a class="btn btn-outline-success" href="{% url 'it_return_approve' i.id %}">Details</a></td>
                             {% else %}

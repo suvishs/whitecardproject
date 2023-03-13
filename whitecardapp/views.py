@@ -86,10 +86,13 @@ def card_status(request):
 def rto(request):
     app_rto = Application.objects.all()
     if request.method == 'POST':
-        aadhar_no = request.POST.get('aadhar_no')
-        rto_user = True
-        usr_det = Application.objects.get(aadhar_no = aadhar_no)
-        return render(request, 'userdetails.html', {'usr_det':usr_det, 'rto_user':rto_user})
+        try:
+            aadhar_no = request.POST.get('aadhar_no')
+            rto_user = True
+            usr_det = Application.objects.get(aadhar_no = aadhar_no)
+            return render(request, 'userdetails.html', {'usr_det':usr_det, 'rto_user':rto_user})
+        except:
+            return HttpResponse("The Aadhar Number Is Invalid Not Present In Database")
     return render(request, 'rto.html', {'app_rto':app_rto})
 
 
@@ -107,10 +110,13 @@ def ration(request):
     app_ration = Application.objects.all()
 
     if request.method == 'POST':
-        aadhar_no = request.POST.get('aadhar_no')
-        ration_user = True
-        usr_det = Application.objects.get(aadhar_no = aadhar_no)
-        return render(request, 'userdetails.html', {'usr_det':usr_det, 'ration_user':ration_user})
+        try:
+            aadhar_no = request.POST.get('aadhar_no')
+            ration_user = True
+            usr_det = Application.objects.get(aadhar_no = aadhar_no)
+            return render(request, 'userdetails.html', {'usr_det':usr_det, 'ration_user':ration_user})
+        except:
+            return HttpResponse("The Aadhar Number Is Invalid Not Present In Database")
 
     return render(request, 'Ration.html', {'app_ration':app_ration})
 
@@ -126,10 +132,13 @@ def rationapprove(request,id):
 def it_return(request):
     app_it = Application.objects.all()
     if request.method == 'POST':
-        aadhar_no = request.POST.get('aadhar_no')
-        it_user = True
-        usr_det = Application.objects.get(aadhar_no = aadhar_no)
-        return render(request, 'userdetails.html', {'usr_det':usr_det, 'it_user':it_user})
+        try:
+            aadhar_no = request.POST.get('aadhar_no')
+            it_user = True
+            usr_det = Application.objects.get(aadhar_no = aadhar_no)
+            return render(request, 'userdetails.html', {'usr_det':usr_det, 'it_user':it_user})
+        except:
+            return HttpResponse("The Aadhar Number Is Invalid Not Present In Database")
     return render(request, 'it_return.html', {'app_it':app_it})
 
 def it_return_approve(request,id):
@@ -145,10 +154,13 @@ def voter(request):
     app_voter = Application.objects.all()
 
     if request.method == 'POST':
-        aadhar_no = request.POST.get('aadhar_no')
-        voter_user = True
-        usr_det = Application.objects.get(aadhar_no = aadhar_no)
-        return render(request, 'userdetails.html', {'usr_det':usr_det, 'voter_user':voter_user})
+        try:
+            aadhar_no = request.POST.get('aadhar_no')
+            voter_user = True
+            usr_det = Application.objects.get(aadhar_no = aadhar_no)
+            return render(request, 'userdetails.html', {'usr_det':usr_det, 'voter_user':voter_user})
+        except:
+            return HttpResponse("The Aadhar Number Is Invalid Not Present In Database")
 
     return render(request, 'voter.html', {'app_voter':app_voter})
 
@@ -164,10 +176,13 @@ def voterapprove(request,id):
 def system_admin(request):
     app_admin = Application.objects.all()
     if request.method == 'POST':
-        aadhar_no = request.POST.get('aadhar_no')
-        admin_user = True
-        usr_det = Application.objects.get(aadhar_no = aadhar_no)
-        return render(request, 'userdetails.html', {'usr_det':usr_det, 'admin_user':admin_user})
+        try:
+            aadhar_no = request.POST.get('aadhar_no')
+            admin_user = True
+            usr_det = Application.objects.get(aadhar_no = aadhar_no)
+            return render(request, 'userdetails.html', {'usr_det':usr_det, 'admin_user':admin_user})
+        except:
+            return HttpResponse("The Aadhar Number Is Invalid Not Present In Database")
     return render(request, 'system_admin.html', {'app_admin':app_admin})
 
 def generate_qr_code(data):

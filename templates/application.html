@@ -52,12 +52,12 @@
 
     <div class="app_filling-id-wrapper">
       <div class="container">
-        <div class="row">
-            <div class="mt-5 text-center"><h2>Application Form</h2></div>
+        <div class="row applform col-6 mx-auto pb-4">
+            <div class="mt-5 text-center text-white"><h2>Application Form</h2></div>
             {% if error_message %}
                 <div id="error-message">{{ error_message }}</div>
             {% endif %}
-			<div class="col-5 align-center" id="application">
+			<div class="col-10 align-center" id="application">
 			    <form method="post" action="application" enctype="multipart/form-data">
                 <table>
                     {% csrf_token %}

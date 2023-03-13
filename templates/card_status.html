@@ -92,6 +92,20 @@
                             </tr>
 
                             <tr>
+                                <th>Pan Card Number</th>
+                                <td>{{i.pancard_no}}</td>
+                            </tr>
+
+                            <tr>
+                                <th>IT_return Approval</th>
+                                {% if i.it_return_approval == 'False' %}
+                                    <td style="color:red">Pending</td>
+                                {% else %}
+                                    <td style="color:green">Approved</td>
+                                {% endif %}
+                            </tr>
+
+                            <tr>
                                 <th>RTO Approval</th>
                                 {% if i.rto_approval == 'False' %}
                                     <td style="color:red">Pending</td>

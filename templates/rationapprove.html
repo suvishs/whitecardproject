@@ -51,35 +51,37 @@
     </div>
     <div class="app_filling-id-wrapper">
         <div class="container">
-            <div class="row">
-                <div class="mt-5 text-center"><h2>Applicant Details</h2></div>
-                <img class="col-2 d-block mx-auto mt-3" src="{{ration_app.Photo.url}}" alt="applicant image" width="200px" height="200px">
+            <div class="col-6 row mx-auto"id="usrform">
+                <div class="mt-5 text-center text-secondary"><h2>Applicant Details</h2></div>
+                <img class="col-4 d-block mx-auto mt-3" src="{{ration_app.Photo.url}}" alt="applicant image" width="200px" height="200px">
                 <div class="mt-2 mb-3 text-center"><h4>{{ration_app.name}}</h4></div>
-                <div class="col-4 mx-auto">
+                <div class="col-8 mx-auto">
                     <form class="text-right" method="post" action="{% url 'rationapprove' ration_app.id %}">
                         {% csrf_token %}
-                        <label>Father's Name</label>
+                        <label class="text-white">Father's Name</label>
                         <input type="text" name="father_name" placeholder="{{ration_app.father_name}}" readonly="readonly"><br>
-                        <label>Phone Number</label>
+                        <label class="text-white">Phone Number</label>
                         <input type="number" name="phone_no" placeholder="{{ration_app.phone_no}}" readonly="readonly"><br>
-                        <label>Gender</label>
+                        <label class="text-white">Gender</label>
                         <input type="text" name="Gender" placeholder="{{ration_app.Gender}}" readonly="readonly"><br>
-                        <label>Email</label>
+                        <label class="text-white">Email</label>
                         <input type="email" name="email" placeholder="{{ration_app.email}}" readonly="readonly"><br>
-                        <label>Date of Birth</label>
+                        <label class="text-white">Date of Birth</label>
                         <input type="text" name="dob" placeholder="{{ration_app.dob}}" readonly="readonly"><br>
-                        <label>Address</label>
+                        <label class="text-white">Address</label>
                         <input rows="5" type="text" name="address" placeholder="{{ration_app.address}}" readonly="readonly"><br>
-                        <label>Aadhar Number</label>
+                        <label class="text-white">Aadhar Number</label>
                         <input type="number" name="aadhar_no" placeholder="{{ration_app.aadhar_no}}" readonly="readonly"><br>
-                        <label>license No</label>
+                        <label class="text-white">license No</label>
                         <input type="number" name="license_no" placeholder="{{ration_app.license_no}}" readonly="readonly"><br>
-                        <label>Election id No</label>
+                        <label class="text-white">Election id No</label>
                         <input type="text" name="electionid_no" placeholder="{{ration_app.electionid_no}}" readonly="readonly"><br>
-                        <label>rationcard No</label>
-                        <input type="number" name="rationcard_no" placeholder="{{ration_app.rationcard_no}}" readonly="readonly"><br><br>
+                        <label class="text-white">Rationcard No</label>
+                        <input type="number" name="rationcard_no" placeholder="{{ration_app.rationcard_no}}" readonly="readonly"><br>
+                        <label class="text-white">PanCard No</label>
+                        <input type="number" name="pancard_no" placeholder="{{ration_app.pancard_no}}" readonly="readonly"><br><br>
                         <input type="checkbox" name="rationapprov" value="True" required>
-                        <label>I declare that all the above details are verified.</label><br>
+                        <label class="text-white">I declare that all the above details are verified.</label><br>
                         <div class="col-1 mx-auto mb-3"><input class="btn btn-success" type="submit"></div>
                     </form>
                 </div>
